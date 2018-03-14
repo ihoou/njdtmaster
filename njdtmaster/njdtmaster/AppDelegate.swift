@@ -14,8 +14,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
         return true
+    }
+    func loadMainView(){
+        
+        let sideVC = SideViewController()
+        
+        let currentMainVC = UITabBarController.init()
+        let navResuceTask = UINavigationController(rootViewController: ResuceTaskVC())
+        let navMyResuce = UINavigationController(rootViewController: MyResuceVC())
+        let navMaintPlan = UINavigationController(rootViewController: MaintPlanVC())
+        let navMyMaint = UINavigationController(rootViewController: MyMaintVC())
+        
+        //设置标签页底部样式
+        currentMainVC.self.tabBar.isTranslucent = false
+        currentMainVC.self.tabBar.backgroundImage = UIImage(named:"bg_tabbar")
+        currentMainVC.self.tabBar.tintColor = UIColor.white
+        currentMainVC.self.view.backgroundColor = UIColor.white
+        
+        navResuceTask.tabBarItem.title = "救援任务"
+        navResuceTask.tabBarItem.image = UIImage(named:"icon_task_normal")
+        
+        
+        navMyResuce.tabBarItem.title = "我的救援"
+        navMyResuce.tabBarItem.image = UIImage(named:"icon_rescue_normal")
+        navMaintPlan.tabBarItem.title = "维保计划"
+        navMaintPlan.tabBarItem.image = UIImage(named:"icon_setting_normal")
+        navMyMaint.tabBarItem.title = "我的维保"
+        navMyMaint.tabBarItem.image = UIImage(named:"icon_rank_normal")
+        currentMainVC.viewControllers = [navResuceTask, navMyResuce, navMaintPlan, navMyMaint]
+        let rootVC = XYSideViewControllerSwift(sideVC, currentMainVC)
+        window?.rootViewController = rootVC
+        window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

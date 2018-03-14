@@ -1,5 +1,5 @@
 //
-//  MainTabViewController.swift
+//  XYSideViewControllerSwift.swift
 //  njdtmaster
 //
 //  Created by 尹浩 on 2018/3/7.

@@ -32,6 +32,7 @@ class WelcomeViewController: UIViewController{
         //调用登陆接口
         let md = NSMutableDictionary()
         uuid = uuid.replacingOccurrences(of: "-", with: "")
+//        print("UUID=\(uuid)")
         md.setValue("{\"txcode\":\"login\",\"imei\":\"\(uuid as String)\"}", forKey: "data")
         
         let a = BaseNetwork()
@@ -62,7 +63,7 @@ class WelcomeViewController: UIViewController{
                 let toast = ToastView()
                 toast.showToast(text: "已经注册！请联系公司管理员认领！", pos: .Bottom)
                 
-                let time: TimeInterval = 3.5//延迟
+                let time: TimeInterval = 3//延迟
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
                     exit(0)//使用该方法，上架苹果商店可能被拒。
                 }
@@ -71,7 +72,8 @@ class WelcomeViewController: UIViewController{
                 print("登陆成功，原因是：\(dic["msg"]!)")
                 //登陆成功，跳转至主页面
 //                self.performSegue(withIdentifier: "validatesuccess", sender: nil)
-                 self.present(MainTabViewController(), animated:true, completion:nil)
+//                 self.present(MainTabViewController(), animated:true, completion:nil)
+                (UIApplication.shared.delegate as! AppDelegate).loadMainView()
             }else if loginflag == "2"{
                 print("登陆失败，原因是：\(dic["msg"]!)")
                 //登陆失败，将跳转至注册页面

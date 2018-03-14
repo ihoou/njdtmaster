@@ -17,7 +17,7 @@ class MainTabViewController:UITabBarController
         self.tabBar.isTranslucent = false
         self.tabBar.backgroundImage = UIImage(named:"bg_tabbar")
         self.tabBar.tintColor = UIColor.white
-        self.view.backgroundColor = UIColor.green
+//        self.view.backgroundColor = UIColor.green
         
         //一共包含了四个视图
         let viewResuceTask = ResuceTaskViewController()
