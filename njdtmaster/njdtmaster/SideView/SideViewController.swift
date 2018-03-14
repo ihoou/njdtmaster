@@ -17,7 +17,10 @@ class SideViewController: UIViewController {
     let titleArray = ["我的信息", "我的排名", "公告信息", "维保统计"]
     let imageArray = ["icon_side_sound", "icon_side_trophy", "icon_side_info", "icon_side_chart"]
     
-    var weatherDic:NSMutableDictionary = ["weatherDate":"","weatherInfo":"","weatherTemperature":"","weatherImgURL":""]
+    var weatherDic:NSMutableDictionary = ["weatherDate":"","weatherInfo":"","weatherTemperature":"","weatherImgURL":"http://api.map.baidu.com/images/weather/day/duoyun.png"]
+    var weatherDATE:String = ""
+    var weatherINFO:String = ""
+    var weatherTEMPERATURE:String = ""
     var imgURL:String = "http://api.map.baidu.com/images/weather/day/duoyun.png"
     
     override func viewDidLoad() {
@@ -80,57 +83,55 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
         
         //调用天气接口
         getWeatherData()
-        let time: TimeInterval = 2
+        let time: TimeInterval = 1
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             let dateLabel = UILabel()
             let weatherLabel = UILabel()
             let temperatureLabel = UILabel()
-            let url = URL(string: self.imgURL)
             for (key,value) in self.weatherDic{
-//                print("\(key),\(value)")
-                if "weatherDate".hasPrefix(key as! String) {
+//                print("key=\(key),value=\(value)")
+                if "weatherDate".contains(key as! String) {
                     dateLabel.text = value as? String
                 }else{
-                    print("\(key),\(value)")
+                    //print("不是weather,\(key),\(value)")
                 }
-                if key as! String == "weatherInfo" as String {
+                if "weatherInfo".contains(key as! String) {
                     weatherLabel.text = value as? String
                 }else{
-                    print("\(key),\(value)")
+                    //print("不是weatherInfo,\(key),\(value)")
                 }
-                if key as! String == "weatherTemperature" as String {
+                if "weatherTemperature".contains(key as! String) {
                     temperatureLabel.text = value as? String
                 }else{
-                    print("\(key),\(value)")
+                    //print("不是weatherTemperature,\(key),\(value)")
                 }
-                if key as! String == "weatherImgURL" as String {
-                    //self.imgURL = value as! String
+                if "weatherImgURL".contains(key as! String) {
+                    self.imgURL = value as! String
                 }else{
-                    print("\(key),\(value)")
+                    //print("不是weatherImgURL,\(key),\(value)")
                 }
             }
             let authorImage = UIImageView(image: UIImage(named: "11"))
             authorImage.frame = CGRect(x:12,y:56,width:64,height:64)
             headView.addSubview(authorImage)
+            let url = URL(string: self.imgURL)
             let data = try! Data(contentsOf: url!)
             let weatherImageView = UIImageView(image: UIImage(data: data))
-            dateLabel.frame = CGRect(x: 90, y: 60, width: 150, height: 30)
+            dateLabel.frame = CGRect(x: 90, y: 60, width: 170, height: 30)
             weatherLabel.frame = CGRect(x: 112, y: 90, width: 100, height: 30)
-            temperatureLabel.frame = CGRect(x: 200, y: 90, width: 60, height: 30)
+            temperatureLabel.frame = CGRect(x: 180, y: 90, width: 60, height: 30)
             weatherImageView.frame = CGRect(x: 90, y:94, width: 20,height: 20)
             dateLabel.textAlignment = NSTextAlignment.left
             weatherLabel.textAlignment = NSTextAlignment.left
             temperatureLabel.textAlignment = NSTextAlignment.left
-            dateLabel.font = UIFont.systemFont(ofSize: 19)
+            dateLabel.font = UIFont.systemFont(ofSize: 13)
             weatherLabel.font = UIFont.systemFont(ofSize: 12)
             temperatureLabel.font = UIFont.systemFont(ofSize: 12)
-            dateLabel.text = "3月14号 星期三"
-            weatherLabel.text = "多云"
             let str:String = weatherLabel.text!
-            if str.count > 7 {
+            if str.count > 7 {//判断天气信息字符串过长时，缩小字体以及调整温度Label水平位置
                 weatherLabel.font = UIFont.systemFont(ofSize:10)
+                temperatureLabel.frame = CGRect(x: 200, y: 90, width: 60, height: 30)
             }
-            temperatureLabel.text = "25 ~ 14℃"
             dateLabel.numberOfLines = 0
             weatherLabel.numberOfLines = 0
             temperatureLabel.numberOfLines = 0
@@ -151,8 +152,8 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
     
     //调用天气接口
     func getWeatherData(){
-        print("开始调用百度天气接口...")
-        Alamofire.request("http://api.map.baidu.com/telematics/v3/weather", method: .get, parameters: ["location":"南京","output":"json","ak":"6tYzTvGZSOpYB5Oc2YGGOKt8"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+//        print("开始调用百度天气接口...")
+        Alamofire.request(CommonData.WEATHER_PATH, method: .get, parameters: ["location":"南京","output":"json","ak":"6tYzTvGZSOpYB5Oc2YGGOKt8"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             
             switch response.result.isSuccess {
             case true:
@@ -166,11 +167,11 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
                     //print(json["results"][0]["weather_data"][0]["wind"])//风力
                     //print(json["results"][0]["index"][0]["tipt"])//穿衣指数
                     //print(json["results"][0]["index"][0]["des"])//穿衣指数描述
-                    self.weatherDic["weatherDate"] = json["results"][0]["weather_data"][0]["date"]
-                    self.weatherDic["weatherInfo"] = json["results"][0]["weather_data"][0]["weather"]
-                    self.weatherDic["weatherTemperature"] = json["results"][0]["weather_data"][0]["temperature"]
-                    self.weatherDic["weatherImgURL"] = json["results"][0]["weather_data"][0]["dayPictureUrl"]
-                    print("天气接口调用完成...")
+                    self.weatherDic["weatherDate"] = json["results"][0]["weather_data"][0]["date"].string!
+                    self.weatherDic["weatherInfo"] = json["results"][0]["weather_data"][0]["weather"].string!
+                    self.weatherDic["weatherTemperature"] = json["results"][0]["weather_data"][0]["temperature"].string!
+                    self.weatherDic["weatherImgURL"] = json["results"][0]["weather_data"][0]["dayPictureUrl"].string!
+//                    print("天气接口调用完成...")
                 }
             case false:
                 print("调用天气接口发生错误：\(response.result.error as Any)")
@@ -188,10 +189,35 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
         let delegate  = UIApplication.shared.delegate! as! AppDelegate
         let rootVC = delegate.window?.rootViewController as! XYSideViewControllerSwift
         rootVC.closeSideVC()
-        let otherVC = OtherViewController()
-        otherVC.title = titleArray[indexPath.row]
-        rootVC.currentNavController?.pushViewController(otherVC, animated: true)
-        print("\(String(describing: otherVC.title))：页面")
+//        let otherVC = OtherViewController()
+//        otherVC.title = titleArray[indexPath.row]
+//        rootVC.currentNavController?.pushViewController(otherVC, animated: true)
+//        print("\(String(describing: otherVC.title))：页面")
+        switch indexPath.row {
+        case 0:
+            let noticsInfoVC = NoticeInfoSubVC()
+            noticsInfoVC.title = titleArray[indexPath.row]
+            rootVC.currentNavController?.pushViewController(noticsInfoVC, animated: true)
+            print("\(String(describing: noticsInfoVC.title!))子页面")
+        case 1:
+            let myRanksVC = MyRanksSubVC()
+            myRanksVC.title = titleArray[indexPath.row]
+            rootVC.currentNavController?.pushViewController(myRanksVC, animated: true)
+            print("\(String(describing: myRanksVC.title!))子页面")
+        case 2:
+            let myInfoVC = MyInfoSubVC()
+            myInfoVC.title = titleArray[indexPath.row]
+            rootVC.currentNavController?.pushViewController(myInfoVC, animated: true)
+            print("\(String(describing: myInfoVC.title!))子页面")
+        case 3:
+            let maintenanceStatisticsVC = MaintenanceStatisticsSubVC()
+            maintenanceStatisticsVC.title = titleArray[indexPath.row]
+            rootVC.currentNavController?.pushViewController(maintenanceStatisticsVC, animated: true)
+            print("\(String(describing: maintenanceStatisticsVC.title!))子页面")
+        default:
+            print("错误菜单选项")
+        }
+        
     }
 }
 

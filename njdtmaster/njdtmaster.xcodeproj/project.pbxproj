@@ -12,6 +12,11 @@
 		B201307B201F0BAE00766573 /* InspectionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201307A201F0BAE00766573 /* InspectionToolbar.swift */; };
 		B201307D201F10D500766573 /* InspectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201307C201F10D500766573 /* InspectionPickerView.swift */; };
 		B234B01E203FA203000008F7 /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234B01D203FA203000008F7 /* BaseNetwork.swift */; };
+		B2417ABB2058C67E00770E23 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ABA2058C67E00770E23 /* CommonData.swift */; };
+		B2417ACB2059057300770E23 /* MyInfoSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ACA2059057300770E23 /* MyInfoSubVC.swift */; };
+		B2417ACD205907A500770E23 /* NoticeInfoSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ACC205907A500770E23 /* NoticeInfoSubVC.swift */; };
+		B2417ACF205907E300770E23 /* MyRanksSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ACE205907E300770E23 /* MyRanksSubVC.swift */; };
+		B2417AD12059084000770E23 /* MaintenanceStatisticsSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417AD02059084000770E23 /* MaintenanceStatisticsSubVC.swift */; };
 		B2438BFD2029889B00BD81CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2438BFC2029889B00BD81CB /* User.swift */; };
 		B251F367204391800032722A /* ExtensionToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251F366204391800032722A /* ExtensionToast.swift */; };
 		B25AEE7A205765CF00284433 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AEE79205765CF00284433 /* SideViewController.swift */; };
@@ -183,6 +188,11 @@
 		B201307A201F0BAE00766573 /* InspectionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionToolbar.swift; sourceTree = "<group>"; };
 		B201307C201F10D500766573 /* InspectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionPickerView.swift; sourceTree = "<group>"; };
 		B234B01D203FA203000008F7 /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
+		B2417ABA2058C67E00770E23 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
+		B2417ACA2059057300770E23 /* MyInfoSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoSubVC.swift; sourceTree = "<group>"; };
+		B2417ACC205907A500770E23 /* NoticeInfoSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeInfoSubVC.swift; sourceTree = "<group>"; };
+		B2417ACE205907E300770E23 /* MyRanksSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRanksSubVC.swift; sourceTree = "<group>"; };
+		B2417AD02059084000770E23 /* MaintenanceStatisticsSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceStatisticsSubVC.swift; sourceTree = "<group>"; };
 		B2438BFC2029889B00BD81CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B251F366204391800032722A /* ExtensionToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionToast.swift; sourceTree = "<group>"; };
 		B25AEE79205765CF00284433 /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +264,7 @@
 				B234B01D203FA203000008F7 /* BaseNetwork.swift */,
 				B2683E7A2046840000E60F3C /* Common.swift */,
 				B25AEE862057A93E00284433 /* Weather.swift */,
+				B2417ABA2058C67E00770E23 /* CommonData.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -262,6 +273,10 @@
 			isa = PBXGroup;
 			children = (
 				B25AEE79205765CF00284433 /* SideViewController.swift */,
+				B2417ACA2059057300770E23 /* MyInfoSubVC.swift */,
+				B2417ACC205907A500770E23 /* NoticeInfoSubVC.swift */,
+				B2417ACE205907E300770E23 /* MyRanksSubVC.swift */,
+				B2417AD02059084000770E23 /* MaintenanceStatisticsSubVC.swift */,
 			);
 			path = SideView;
 			sourceTree = "<group>";
@@ -548,6 +563,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2EFC60620084C8D005D8338 /* RegisterViewController.swift in Sources */,
+				B2417ACB2059057300770E23 /* MyInfoSubVC.swift in Sources */,
+				B2417ACF205907E300770E23 /* MyRanksSubVC.swift in Sources */,
 				B2013079201F0B6800766573 /* Inspection.swift in Sources */,
 				B2EEEAD8204406E400CBE7DD /* ResuceTaskViewController.swift in Sources */,
 				B251F367204391800032722A /* ExtensionToast.swift in Sources */,
@@ -557,6 +574,7 @@
 				B2712C69205223220020D9F0 /* XYSideViewControllerSwift.swift in Sources */,
 				B25AEE872057A93E00284433 /* Weather.swift in Sources */,
 				B2805CEB202AE0BB005BBD38 /* WelcomeViewController.swift in Sources */,
+				B2417AD12059084000770E23 /* MaintenanceStatisticsSubVC.swift in Sources */,
 				B2EEEADA204406F600CBE7DD /* MyMaintViewController.swift in Sources */,
 				B2EEEADC2044070800CBE7DD /* MaintPlanViewController.swift in Sources */,
 				B25AEE832057693300284433 /* MyMaintVC.swift in Sources */,
@@ -567,9 +585,11 @@
 				B25AEE7C2057665000284433 /* OtherViewController.swift in Sources */,
 				B2F3F313200EE02D006CB78E /* Role.swift in Sources */,
 				B2683E7B2046840000E60F3C /* Common.swift in Sources */,
+				B2417ABB2058C67E00770E23 /* CommonData.swift in Sources */,
 				B201307B201F0BAE00766573 /* InspectionToolbar.swift in Sources */,
 				B25AEE822057693300284433 /* MyResuceVC.swift in Sources */,
 				B2F3F311200EE006006CB78E /* RoleToolbar.swift in Sources */,
+				B2417ACD205907A500770E23 /* NoticeInfoSubVC.swift in Sources */,
 				B2FDD6F620215E97006EC48C /* LoginDoneViewController.swift in Sources */,
 				B234B01E203FA203000008F7 /* BaseNetwork.swift in Sources */,
 				B2B2CEA6204D2F7C00511479 /* OtherPageViewController.swift in Sources */,
