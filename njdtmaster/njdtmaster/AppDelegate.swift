@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navResuceTask.tabBarItem.title = "救援任务"
         navResuceTask.tabBarItem.image = UIImage(named:"icon_task_normal")
         
-        
         navMyResuce.tabBarItem.title = "我的救援"
         navMyResuce.tabBarItem.image = UIImage(named:"icon_rescue_normal")
         navMaintPlan.tabBarItem.title = "维保计划"

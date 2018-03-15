@@ -32,6 +32,7 @@
 		B25AEEC22057C43A00284433 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B25AEEB42057C42A00284433 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2683E7B2046840000E60F3C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2683E7A2046840000E60F3C /* Common.swift */; };
 		B2712C69205223220020D9F0 /* XYSideViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */; };
+		B27AD555205A480F004D3629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27AD554205A480F004D3629 /* Assets.xcassets */; };
 		B2805CEB202AE0BB005BBD38 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */; };
 		B2B2CEA6204D2F7C00511479 /* OtherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */; };
 		B2EEEAD4204406AF00CBE7DD /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */; };
@@ -43,7 +44,6 @@
 		B2EFC60420084C8D005D8338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFC60320084C8D005D8338 /* AppDelegate.swift */; };
 		B2EFC60620084C8D005D8338 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFC60520084C8D005D8338 /* RegisterViewController.swift */; };
 		B2EFC60920084C8D005D8338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EFC60720084C8D005D8338 /* Main.storyboard */; };
-		B2EFC60B20084C8D005D8338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2EFC60A20084C8D005D8338 /* Assets.xcassets */; };
 		B2EFC60E20084C8D005D8338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EFC60C20084C8D005D8338 /* LaunchScreen.storyboard */; };
 		B2F3F311200EE006006CB78E /* RoleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3F310200EE006006CB78E /* RoleToolbar.swift */; };
 		B2F3F313200EE02D006CB78E /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3F312200EE02D006CB78E /* Role.swift */; };
@@ -206,6 +206,7 @@
 		B25AEEA82057C42A00284433 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../../Downloads/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		B2683E7A2046840000E60F3C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYSideViewControllerSwift.swift; sourceTree = "<group>"; };
+		B27AD554205A480F004D3629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPageViewController.swift; sourceTree = "<group>"; };
 		B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 		B2EFC60320084C8D005D8338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2EFC60520084C8D005D8338 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B2EFC60820084C8D005D8338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B2EFC60A20084C8D005D8338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2EFC60D20084C8D005D8338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2EFC60F20084C8D005D8338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F3F310200EE006006CB78E /* RoleToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleToolbar.swift; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 				B2EEEADD2044082400CBE7DD /* MainViewController.swift */,
 				B2EFC60520084C8D005D8338 /* RegisterViewController.swift */,
 				B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */,
+				B27AD554205A480F004D3629 /* Assets.xcassets */,
 				B2EFC60720084C8D005D8338 /* Main.storyboard */,
-				B2EFC60A20084C8D005D8338 /* Assets.xcassets */,
 				B2EFC60C20084C8D005D8338 /* LaunchScreen.storyboard */,
 				B2EFC60F20084C8D005D8338 /* Info.plist */,
 				B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */,
@@ -549,9 +549,9 @@
 			files = (
 				B2EFC60E20084C8D005D8338 /* LaunchScreen.storyboard in Resources */,
 				B2F3F317200EE176006CB78E /* role.plist in Resources */,
-				B2EFC60B20084C8D005D8338 /* Assets.xcassets in Resources */,
 				B2EFC60920084C8D005D8338 /* Main.storyboard in Resources */,
 				B2013077201F09D400766573 /* inspection.plist in Resources */,
+				B27AD555205A480F004D3629 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
