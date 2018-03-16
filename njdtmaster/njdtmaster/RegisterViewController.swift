@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController  {
     //此两组信息需要根据不同角色显示不同的内容
     @IBOutlet weak var thirdIcon: UIImageView!
     @IBOutlet weak var thirdTextField: UITextField!
+    @IBOutlet weak var btn: UIButton!
     
     var rolePickerView: RolePickerView?
     var inspectionPickerView: InspectionPickerView?
@@ -31,7 +32,7 @@ class RegisterViewController: UIViewController  {
     @IBAction func userRegisterBtn(_ sender: UIButton) {
         print("执行调用注册接口\n")
         print("角色：\(String(describing: userRole.text))\n用户：\(String(describing: userName.text))\n电话：\(String(describing: userPhone.text))")
-        
+        //设置视图适配
         let users = User()
         users.userName = userName.text
         users.userPhone = userPhone.text

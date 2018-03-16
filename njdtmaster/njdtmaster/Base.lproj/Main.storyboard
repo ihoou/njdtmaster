@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,10 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_register" translatesAutoresizingMaskIntoConstraints="NO" id="j6k-Ws-mWT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_app" translatesAutoresizingMaskIntoConstraints="NO" id="TuF-dT-fdy">
                                 <rect key="frame" x="147" y="101" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -676,7 +673,7 @@ OSo8KkkqTipWKlkqXipmKmkqeyp+KoMAAAAAAAACAQAAAAAAAABZAAAAAAAAAAAAAAAAAAAqhQ
         <image name="icon_register_xm" width="48" height="48"/>
         <image name="icon_register_zyz" width="48" height="48"/>
         <image name="line" width="750" height="4"/>
-        <image name="myinfo" width="413" height="674"/>
+        <image name="myinfo" width="411" height="675"/>
         <image name="qq" width="30" height="30"/>
         <image name="xingxing" width="26" height="27"/>
     </resources>

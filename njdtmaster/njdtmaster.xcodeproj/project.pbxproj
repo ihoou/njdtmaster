@@ -30,6 +30,7 @@
 		B25AEEA22057B13500284433 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B25AEE942057B10300284433 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B25AEEC12057C43A00284433 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25AEEB42057C42A00284433 /* SwiftyJSON.framework */; };
 		B25AEEC22057C43A00284433 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B25AEEB42057C42A00284433 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EA612205B5AC6001D9866 /* UIDevice.swift */; };
 		B2683E7B2046840000E60F3C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2683E7A2046840000E60F3C /* Common.swift */; };
 		B2712C69205223220020D9F0 /* XYSideViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */; };
 		B27AD555205A480F004D3629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27AD554205A480F004D3629 /* Assets.xcassets */; };
@@ -204,6 +205,7 @@
 		B25AEE862057A93E00284433 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		B25AEE882057B10200284433 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		B25AEEA82057C42A00284433 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../../Downloads/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		B25EA612205B5AC6001D9866 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		B2683E7A2046840000E60F3C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYSideViewControllerSwift.swift; sourceTree = "<group>"; };
 		B27AD554205A480F004D3629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				B2683E7A2046840000E60F3C /* Common.swift */,
 				B25AEE862057A93E00284433 /* Weather.swift */,
 				B2417ABA2058C67E00770E23 /* CommonData.swift */,
+				B25EA612205B5AC6001D9866 /* UIDevice.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				B2EEEAD6204406CD00CBE7DD /* MyResuceViewController.swift in Sources */,
 				B2EEEAD4204406AF00CBE7DD /* MainTabViewController.swift in Sources */,
 				B2EFC60420084C8D005D8338 /* AppDelegate.swift in Sources */,
+				B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */,
 				B25AEE7C2057665000284433 /* OtherViewController.swift in Sources */,
 				B2F3F313200EE02D006CB78E /* Role.swift in Sources */,
 				B2683E7B2046840000E60F3C /* Common.swift in Sources */,
@@ -751,7 +755,7 @@
 				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = default;
 				DEVELOPMENT_TEAM = UKL2B4M8T2;
 				INFOPLIST_FILE = njdtmaster/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsict.njdtmaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -769,7 +773,7 @@
 				DEBUG_ACTIVITY_MODE = "";
 				DEVELOPMENT_TEAM = UKL2B4M8T2;
 				INFOPLIST_FILE = njdtmaster/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsict.njdtmaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";

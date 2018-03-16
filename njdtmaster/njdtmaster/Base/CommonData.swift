@@ -16,7 +16,7 @@ class CommonData {
      */
     static let ADMIN_SRCEEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
     static let ADMIN_SRCEEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
-    
+    static var ADD_ADAPTATION_HEIGHT:CGFloat = 5
     /*
         终端信息
      */

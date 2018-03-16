@@ -14,7 +14,7 @@ import SwiftyJSON
 class SideViewController: UIViewController {
     
     static let TABLEVIEWCELLIDENTIFIER = "TABLEVIEWCELLIDENTIFIER"
-    let titleArray = ["我的信息", "我的排名", "公告信息", "维保统计"]
+    let titleArray = ["公告信息", "我的排名", "我的信息", "维保统计"]
     let imageArray = ["icon_side_sound", "icon_side_trophy", "icon_side_info", "icon_side_chart"]
     
     var weatherDic:NSMutableDictionary = ["weatherDate":"","weatherInfo":"","weatherTemperature":"","weatherImgURL":"http://api.map.baidu.com/images/weather/day/duoyun.png"]
@@ -160,11 +160,11 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
                 if let value = response.result.value {
                     let json = JSON(value)
 //                    print(json)
-//                    print(json["date"])
+//                    print(json["results"][0]["weather_data"][0]["date"])
 //                    print(json["results"][0]["weather_data"][0]["weather"])//天气
 //                    print(json["results"][0]["weather_data"][0]["temperature"])//温度
-//                    print(json["results"][0]["weather_data"][0]["dayPictureUrl"])//天气图标
-                    //print(json["results"][0]["weather_data"][0]["wind"])//风力
+//                    print(json["results"][0]["weather_data"][0]["dayPictureUrl"])//天气图标地址
+//                    print(json["results"][0]["weather_data"][0]["wind"])//风力
                     //print(json["results"][0]["index"][0]["tipt"])//穿衣指数
                     //print(json["results"][0]["index"][0]["des"])//穿衣指数描述
                     self.weatherDic["weatherDate"] = json["results"][0]["weather_data"][0]["date"].string!
