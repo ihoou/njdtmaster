@@ -8,18 +8,6 @@
 
 import UIKit
 
-let stKey = "state"
-let ciKey = "cities"
-let cyKey = "city"
-let arKey = "areas"
-
-let APBarTintColor = UIColor(red: 60/255, green: 226/255, blue: 208/255, alpha: 1.0)
-let APTintColor = UIColor.white
-///屏幕宽度
-let AP_WIDTH: CGFloat = {
-    UIScreen.main.bounds.size.width
-}()
-
 enum InspectionPickerType: Int {
     case first
     case second
@@ -42,7 +30,7 @@ class InspectionPickerView: UIView {
     
     weak var mydelegate: InspectionPickerViewDelegate?
     
-    static func inspectionpicker<Mycontroller: UIViewController>(for controller: Mycontroller, textField: UITextField, barTintColor: UIColor = APBarTintColor, tintColor: UIColor = APTintColor) -> InspectionPickerView where Mycontroller: InspectionPickerDelegate {
+    static func inspectionpicker<Mycontroller: UIViewController>(for controller: Mycontroller, textField: UITextField, barTintColor: UIColor = CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor = UIColor.white) -> InspectionPickerView where Mycontroller: InspectionPickerDelegate {
         
         
         let inspectionPickerView = InspectionPickerView()
@@ -56,17 +44,17 @@ class InspectionPickerView: UIView {
         pickerView.delegate = inspectionPickerView
         pickerView.dataSource = inspectionPickerView
         
-        inspectionPickerView.cities = inspectionPickerView.inspectionlists[0][ciKey] as! [[String : AnyObject]]!
-        if let province = inspectionPickerView.inspectionlists[0][stKey] as? String {
+        inspectionPickerView.cities = inspectionPickerView.inspectionlists[0][CommonData.cityKey] as! [[String : AnyObject]]!
+        if let province = inspectionPickerView.inspectionlists[0][CommonData.stateKey] as? String {
             inspectionPickerView.inspectionsource.first = province
         }
         
-        if let second = inspectionPickerView.cities[0][cyKey] as? String {
+        if let second = inspectionPickerView.cities[0][CommonData.cityKey] as? String {
             inspectionPickerView.inspectionsource.second = second
         }
         
         
-        inspectionPickerView.areas = inspectionPickerView.cities[0][arKey] as! [String]!
+        inspectionPickerView.areas = inspectionPickerView.cities[0][CommonData.areasKey] as! [String]!
         
         if inspectionPickerView.areas.count > 0 {
             inspectionPickerView.inspectionsource.area = inspectionPickerView.areas[0]
@@ -75,7 +63,7 @@ class InspectionPickerView: UIView {
         }
         
         textField.inputView = pickerView
-        inspectionPickerView.toolbar = InspectionToolbar.bar(for: controller, textField: textField, barTintColor: APBarTintColor, tintColor: APTintColor)
+        inspectionPickerView.toolbar = InspectionToolbar.bar(for: controller, textField: textField, barTintColor: CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor.white)
         textField.inputAccessoryView = inspectionPickerView.toolbar
         
         
@@ -98,9 +86,9 @@ class InspectionPickerView: UIView {
         
         for index in 0..<inspectionlists.count {
             let pro = inspectionlists[index]
-            if pro[stKey] as! String == proName {
-                cities = inspectionlists[index][ciKey] as! [[String : AnyObject]]!
-                if let first = inspectionlists[index][stKey] as? String {
+            if pro[CommonData.stateKey] as! String == proName {
+                cities = inspectionlists[index][CommonData.cityKey] as! [[String : AnyObject]]!
+                if let first = inspectionlists[index][CommonData.stateKey] as? String {
                     inspectionsource.first = first
                 }
                 pickerView.selectRow(index, inComponent: InspectionPickerType.first.rawValue, animated: false)
@@ -110,12 +98,12 @@ class InspectionPickerView: UIView {
         
         for index in 0..<cities.count {
             let second = cities[index]
-            if second[cyKey] as! String == cityName {
-                if let second = cities[index][cyKey] as? String {
+            if second[CommonData.cityKey] as! String == cityName {
+                if let second = cities[index][CommonData.cityKey] as? String {
                     inspectionsource.second = second
                 }
                 
-                areas = cities[index][arKey] as! [String]!
+                areas = cities[index][CommonData.areasKey] as! [String]!
                 pickerView.selectRow(index, inComponent: InspectionPickerType.second.rawValue, animated: false)
                 break
             }
@@ -169,9 +157,9 @@ extension InspectionPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         let pickerType = InspectionPickerType(rawValue: component)!
         switch pickerType {
         case .first:
-            return inspectionlists[row][stKey] as! String?
+            return inspectionlists[row][CommonData.stateKey] as! String?
         case .second:
-            return cities[row][cyKey] as! String?
+            return cities[row][CommonData.cityKey] as! String?
         case .area:
             if areas.count > 0 {
                 return areas[row]
@@ -183,15 +171,15 @@ extension InspectionPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //        print("选中了某一行")
-        let pickerType = PickerType(rawValue: component)!
+        let pickerType = CommonData.PickerType(rawValue: component)!
         switch pickerType {
         case .first:
             
-            cities = inspectionlists[row][ciKey] as! [[String : AnyObject]]!
-            pickerView.reloadComponent(PickerType.second.rawValue)
-            pickerView.selectRow(0, inComponent: PickerType.second.rawValue, animated: true)
+            cities = inspectionlists[row][CommonData.citiesKey] as! [[String : AnyObject]]!
+            pickerView.reloadComponent(CommonData.PickerType.second.rawValue)
+            pickerView.selectRow(0, inComponent: CommonData.PickerType.second.rawValue, animated: true)
             reloadAreaComponent(pickerView: pickerView, row: 0)
-            if let first = inspectionlists[row][stKey] as? String {
+            if let first = inspectionlists[row][CommonData.stateKey] as? String {
                 inspectionsource.first = first
             }
             print("当前选中的是：\(inspectionsource.first)")
@@ -218,11 +206,11 @@ extension InspectionPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
             return
         }
         
-        areas = cities[row][arKey] as! [String]!
-        pickerView.reloadComponent(PickerType.area.rawValue)
-        pickerView.selectRow(0, inComponent: PickerType.area.rawValue, animated: true)
+        areas = cities[row][CommonData.stateKey] as! [String]!
+        pickerView.reloadComponent(CommonData.PickerType.area.rawValue)
+        pickerView.selectRow(0, inComponent: CommonData.PickerType.area.rawValue, animated: true)
         
-        if let second = cities[row][cyKey] as? String {
+        if let second = cities[row][CommonData.cityKey] as? String {
             inspectionsource.second = second
         }
         if areas.count > 0 {

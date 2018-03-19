@@ -1,70 +1,69 @@
 //
-//  AreaPickerView.swift
+//  FaultTypePickerView.swift
 //  njdtmaster
 //
-//  Created by 尹浩 on 2018/1/17.
+//  Created by 尹浩 on 2018/3/19.
 //  Copyright © 2018年 尹浩. All rights reserved.
 //
 
 import UIKit
 
-
-protocol RolePickerViewDelegate: class {
-    func statusChanged(rolePickerView: RolePickerView, pickerView: UIPickerView, textField: UITextField, role: Role)
+protocol FaultTypePickerViewDelegate: class {
+    func statusChanged(faultTypePickerView: FaultTypePickerView, pickerView: UIPickerView, textField: UITextField, faultType: FaultType)
 }
 
-protocol RolePickerDelegate: RolePickerViewDelegate, RoleToolbarDelegate {}
+protocol FaultTypePickerDelegate: FaultTypePickerViewDelegate, FaultTypeToolbarDelegate {}
 
-class RolePickerView: UIView {
+class FaultTypePickerView: UIView {
     
     var cities = [[String: AnyObject]]()
     var areas = [String]()
     var textField: UITextField!
     var pickerView:UIPickerView!
-    var toolbar: RoleToolbar!
+    var toolbar: FaultTypeToolbar!
     
     
-    weak var delegate: RolePickerViewDelegate?
+    weak var delegate: FaultTypePickerViewDelegate?
     
-    static func rolepicker<controller: UIViewController>(for controller: controller, textField: UITextField, barTintColor: UIColor = CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor = UIColor.white) -> RolePickerView where controller: RolePickerDelegate {
+    static func faultTypepicker<FTcontroller: UIViewController>(for controller: FTcontroller, textField: UITextField, barTintColor: UIColor = CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor = UIColor.white) -> FaultTypePickerView where FTcontroller: FaultTypePickerDelegate {
         //        print("the vaule is \(String(describing: textField.text))")
-    
         
-        let rolePickerView = RolePickerView()
-        rolePickerView.delegate = controller
-        rolePickerView.textField = textField
+        
+        let faultTypePickerView = FaultTypePickerView()
+        faultTypePickerView.delegate = controller
+        faultTypePickerView.textField = textField
         
         let pickerView = UIPickerView()
         pickerView.backgroundColor = UIColor.white
-        rolePickerView.pickerView = pickerView
+        faultTypePickerView.pickerView = pickerView
         
-        pickerView.delegate = rolePickerView
-        pickerView.dataSource = rolePickerView
+        pickerView.delegate = faultTypePickerView
+        pickerView.dataSource = faultTypePickerView
         
-        rolePickerView.cities = rolePickerView.rolelists[0][CommonData.citiesKey] as! [[String : AnyObject]]!
-        if let province = rolePickerView.rolelists[0][CommonData.stateKey] as? String {
-            rolePickerView.rolesource.first = province
+        faultTypePickerView.cities = faultTypePickerView.rolelists[0][CommonData.citiesKey] as! [[String : AnyObject]]!
+        if let province = faultTypePickerView.rolelists[0][CommonData.stateKey] as? String {
+            faultTypePickerView.faulttypesource.first = province
         }
         
-        if let second = rolePickerView.cities[0][CommonData.cityKey] as? String {
-            rolePickerView.rolesource.second = second
+        if let second = faultTypePickerView.cities[0][CommonData.cityKey] as? String {
+            faultTypePickerView.faulttypesource.second = second
         }
         
         
-        rolePickerView.areas = rolePickerView.cities[0][CommonData.areasKey] as! [String]!
+        faultTypePickerView.areas = faultTypePickerView.cities[0][CommonData.areasKey] as! [String]!
         
-        if rolePickerView.areas.count > 0 {
-            rolePickerView.rolesource.area = rolePickerView.areas[0]
+        if faultTypePickerView.areas.count > 0 {
+            faultTypePickerView.faulttypesource.area = faultTypePickerView.areas[0]
         } else {
-            rolePickerView.rolesource.area = ""
+            faultTypePickerView.faulttypesource.area = ""
         }
         
         textField.inputView = pickerView
-        rolePickerView.toolbar = RoleToolbar.bar(for: controller, textField: textField, barTintColor: CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor.white)
-        textField.inputAccessoryView = rolePickerView.toolbar
+        faultTypePickerView.toolbar = FaultTypeToolbar.bar(for: controller, textField: textField, barTintColor: CommonData.AP_DEFAULT_BAR_TINT_COLOR, tintColor: UIColor.white)
+        textField.inputAccessoryView = faultTypePickerView.toolbar
         
         
-        return rolePickerView
+        return faultTypePickerView
     }
     
     private init(){
@@ -86,7 +85,7 @@ class RolePickerView: UIView {
             if pro[CommonData.stateKey] as! String == proName {
                 cities = rolelists[index][CommonData.citiesKey] as! [[String : AnyObject]]!
                 if let first = rolelists[index][CommonData.stateKey] as? String {
-                    rolesource.first = first
+                    faulttypesource.first = first
                 }
                 pickerView.selectRow(index, inComponent: CommonData.PickerType.first.rawValue, animated: false)
                 break
@@ -97,7 +96,7 @@ class RolePickerView: UIView {
             let second = cities[index]
             if second[CommonData.cityKey] as! String == cityName {
                 if let second = cities[index][CommonData.cityKey] as? String {
-                    rolesource.second = second
+                    faulttypesource.second = second
                 }
                 
                 areas = cities[index][CommonData.areasKey] as! [String]!
@@ -110,7 +109,7 @@ class RolePickerView: UIView {
             
             for (index, name) in areas.enumerated() {
                 if name == areaName! {
-                    rolesource.area = areas[index]
+                    faulttypesource.area = areas[index]
                     pickerView.selectRow(index, inComponent: CommonData.PickerType.area.rawValue, animated: false)
                     break
                 }
@@ -122,17 +121,21 @@ class RolePickerView: UIView {
     
     // MARK: - lazy
     lazy var rolelists: [[String: AnyObject]] = {
-        let path = Bundle.main.path(forResource: "role", ofType: "plist")
+        let path = Bundle.main.path(forResource: "faultType", ofType: "plist")
         return NSArray(contentsOfFile: path!) as! [[String: AnyObject]]
     }()
     
-    lazy var rolesource: Role = {
-        return Role()
+    lazy var faulttypesource: FaultType = {
+        return FaultType()
     }()
+    
+    func taylorSwift(){
+        print("Taylor Swift")
+    }
     
 }
 
-extension RolePickerView: UIPickerViewDelegate, UIPickerViewDataSource {
+extension FaultTypePickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
@@ -177,22 +180,22 @@ extension RolePickerView: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerView.selectRow(0, inComponent: CommonData.PickerType.second.rawValue, animated: true)
             reloadAreaComponent(pickerView: pickerView, row: 0)
             if let first = rolelists[row][CommonData.stateKey] as? String {
-                rolesource.first = first
+                faulttypesource.first = first
             }
-//            print("当前选中的是：\(rolesource.first)")
+            //            print("当前选中的是：\(rolesource.first)")
             
         case .second:
             reloadAreaComponent(pickerView: pickerView, row: row)
         case .area:
             if areas.count > 0 {
-                rolesource.area = areas[row]
+                faulttypesource.area = areas[row]
             } else {
-                rolesource.area = ""
+                faulttypesource.area = ""
             }
         }
         
-        toolbar.role = rolesource
-        delegate?.statusChanged(rolePickerView: self, pickerView: pickerView, textField: textField, role: rolesource)
+        toolbar.faultType = faulttypesource
+        delegate?.statusChanged(faultTypePickerView: self, pickerView: pickerView, textField: textField, faultType: faulttypesource)
         
     }
     
@@ -208,13 +211,14 @@ extension RolePickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerView.selectRow(0, inComponent: CommonData.PickerType.area.rawValue, animated: true)
         
         if let second = cities[row][CommonData.cityKey] as? String {
-            rolesource.second = second
+            faulttypesource.second = second
         }
         if areas.count > 0 {
-            rolesource.area = areas[0]
+            faulttypesource.area = areas[0]
         } else {
-            rolesource.area = ""
+            faulttypesource.area = ""
         }
         
     }
 }
+

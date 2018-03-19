@@ -72,6 +72,8 @@ class WelcomeViewController: UIViewController{
                             CommonData.USER_NAME = json["data"]["staffName"].string!
                             CommonData.TERMINAL_IDENTIFICATION = json["data"]["staffImei"].string!
                             CommonData.LAST_LOGIN_TIME = json["data"]["lastTime"].string!
+                            CommonData.CLIENT_ID = json["data"]["clientId"].string!
+                            CommonData.MAINT_ID = json["data"]["maintId"].string!
                             //加载主页面
                             (UIApplication.shared.delegate as! AppDelegate).loadMainView()
                         }else if self.loginFlag == "2"{

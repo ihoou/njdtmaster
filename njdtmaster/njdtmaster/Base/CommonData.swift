@@ -35,7 +35,26 @@ class CommonData {
     static var LAST_LOGIN_TIME:String = "1970-01-01 00:00:00"
     static let CUSTOMER_HOTLINE:String = "15366181339"
     static let CACHE_CLEANUP:String = "点击此处清理缓存"
+    //其他注册信息
+    static var CLIENT_ID:String = ""
+    static var MAINT_ID:String = ""
+    static var IMEI:String = ""
     
+    //APP人员角色
+    static var APP_Role:String = ""
+    
+    /** Picker Base Infomation */
+    static let stateKey:String = "state"
+    static let citiesKey:String = "cities"
+    static let cityKey:String = "city"
+    static let areasKey:String = "areas"
+    static let AP_DEFAULT_BAR_TINT_COLOR:UIColor = UIColor(red: 60/255, green: 226/255, blue: 208/255, alpha: 1.0)
+    
+    enum PickerType: Int {
+        case first
+        case second
+        case area
+    }
     /*
         NetWork Address
      */

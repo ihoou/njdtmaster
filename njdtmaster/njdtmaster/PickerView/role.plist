@@ -29,7 +29,13 @@
                     <key>areas</key>
                     <array/>
                     <key>city</key>
-                    <string> </string>
+                    <string>检验机构</string>
+                </dict>
+                <dict>
+                    <key>areas</key>
+                    <array/>
+                    <key>city</key>
+                    <string>非检验机构</string>
                 </dict>
             </array>
             <key>state</key>

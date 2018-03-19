@@ -36,6 +36,10 @@
 		B27AD555205A480F004D3629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27AD554205A480F004D3629 /* Assets.xcassets */; };
 		B2805CEB202AE0BB005BBD38 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */; };
 		B2B2CEA6204D2F7C00511479 /* OtherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */; };
+		B2D54873205F8E77002B76A5 /* faultType.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2D54872205F8E77002B76A5 /* faultType.plist */; };
+		B2D54883205F9600002B76A5 /* FaultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54882205F9600002B76A5 /* FaultType.swift */; };
+		B2D54885205F962C002B76A5 /* FaultTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54884205F962C002B76A5 /* FaultTypePickerView.swift */; };
+		B2D54887205F96FF002B76A5 /* FaultTypeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54886205F96FF002B76A5 /* FaultTypeToolbar.swift */; };
 		B2EEEAD4204406AF00CBE7DD /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */; };
 		B2EEEAD6204406CD00CBE7DD /* MyResuceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD5204406CD00CBE7DD /* MyResuceViewController.swift */; };
 		B2EEEAD8204406E400CBE7DD /* ResuceTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD7204406E400CBE7DD /* ResuceTaskViewController.swift */; };
@@ -211,6 +215,10 @@
 		B27AD554205A480F004D3629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPageViewController.swift; sourceTree = "<group>"; };
+		B2D54872205F8E77002B76A5 /* faultType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = faultType.plist; sourceTree = "<group>"; };
+		B2D54882205F9600002B76A5 /* FaultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultType.swift; sourceTree = "<group>"; };
+		B2D54884205F962C002B76A5 /* FaultTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultTypePickerView.swift; sourceTree = "<group>"; };
+		B2D54886205F96FF002B76A5 /* FaultTypeToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultTypeToolbar.swift; sourceTree = "<group>"; };
 		B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		B2EEEAD5204406CD00CBE7DD /* MyResuceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResuceViewController.swift; sourceTree = "<group>"; };
 		B2EEEAD7204406E400CBE7DD /* ResuceTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuceTaskViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +381,10 @@
 				B2013076201F09D400766573 /* inspection.plist */,
 				B201307C201F10D500766573 /* InspectionPickerView.swift */,
 				B2438BFC2029889B00BD81CB /* User.swift */,
+				B2D54872205F8E77002B76A5 /* faultType.plist */,
+				B2D54882205F9600002B76A5 /* FaultType.swift */,
+				B2D54884205F962C002B76A5 /* FaultTypePickerView.swift */,
+				B2D54886205F96FF002B76A5 /* FaultTypeToolbar.swift */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -553,6 +565,7 @@
 				B2EFC60E20084C8D005D8338 /* LaunchScreen.storyboard in Resources */,
 				B2F3F317200EE176006CB78E /* role.plist in Resources */,
 				B2EFC60920084C8D005D8338 /* Main.storyboard in Resources */,
+				B2D54873205F8E77002B76A5 /* faultType.plist in Resources */,
 				B2013077201F09D400766573 /* inspection.plist in Resources */,
 				B27AD555205A480F004D3629 /* Assets.xcassets in Resources */,
 			);
@@ -573,6 +586,7 @@
 				B251F367204391800032722A /* ExtensionToast.swift in Sources */,
 				B201307D201F10D500766573 /* InspectionPickerView.swift in Sources */,
 				B25AEE842057693300284433 /* MaintPlanVC.swift in Sources */,
+				B2D54883205F9600002B76A5 /* FaultType.swift in Sources */,
 				B2EEEADE2044082400CBE7DD /* MainViewController.swift in Sources */,
 				B2712C69205223220020D9F0 /* XYSideViewControllerSwift.swift in Sources */,
 				B25AEE872057A93E00284433 /* Weather.swift in Sources */,
@@ -588,7 +602,9 @@
 				B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */,
 				B25AEE7C2057665000284433 /* OtherViewController.swift in Sources */,
 				B2F3F313200EE02D006CB78E /* Role.swift in Sources */,
+				B2D54887205F96FF002B76A5 /* FaultTypeToolbar.swift in Sources */,
 				B2683E7B2046840000E60F3C /* Common.swift in Sources */,
+				B2D54885205F962C002B76A5 /* FaultTypePickerView.swift in Sources */,
 				B2417ABB2058C67E00770E23 /* CommonData.swift in Sources */,
 				B201307B201F0BAE00766573 /* InspectionToolbar.swift in Sources */,
 				B25AEE822057693300284433 /* MyResuceVC.swift in Sources */,

@@ -14,8 +14,8 @@ import SwiftyJSON
 class SideViewController: UIViewController {
     
     static let TABLEVIEWCELLIDENTIFIER = "TABLEVIEWCELLIDENTIFIER"
-    let titleArray = ["公告信息", "我的排名", "我的信息", "维保统计"]
-    let imageArray = ["icon_side_sound", "icon_side_trophy", "icon_side_info", "icon_side_chart"]
+    let titleArray = ["人员认领","人员管理","实时位置","救援统计","公告信息", "我的排名", "我的信息", "维保统计"]
+    let imageArray = ["icon_drawer_ryrl","icon_drawer_rygl","icon_drawer_sswz","jytj","icon_side_sound", "icon_side_trophy", "icon_side_info", "icon_side_chart"]
     
     var weatherDic:NSMutableDictionary = ["weatherDate":"","weatherInfo":"","weatherTemperature":"","weatherImgURL":"http://api.map.baidu.com/images/weather/day/duoyun.png"]
     var weatherDATE:String = ""

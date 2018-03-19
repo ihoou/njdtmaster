@@ -191,8 +191,10 @@ extension RegisterViewController: RolePickerDelegate {
             thirdIcon.isHidden = false
             thirdTextField.isHidden = false
             thirdIcon.image = UIImage(named:"icon_inspectper")
-            thirdTextField.text = "检验机构"
+            thirdTextField.text = role.second
             thirdTextField.textColor = UIColor.white
+            thirdTextField.isUserInteractionEnabled = false
+            //print("\(role.first)的子项是：\(role.second)")
         case "非检验机构":
             thirdLine.isHidden = false
             thirdBackground.isHidden = false

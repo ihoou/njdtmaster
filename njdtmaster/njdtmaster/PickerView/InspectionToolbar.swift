@@ -33,7 +33,7 @@ class InspectionToolbar: UIToolbar {
     }
     
     private init(){
-        super.init(frame: CGRect(x: 0, y: 0, width: AP_WIDTH, height: 44))
+        super.init(frame: CGRect(x: 0, y: 0, width: CommonData.ADMIN_SRCEEN_WIDTH, height: 44))
     }
     
     required init?(coder aDecoder: NSCoder) {
