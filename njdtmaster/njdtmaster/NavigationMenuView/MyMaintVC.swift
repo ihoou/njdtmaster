@@ -19,7 +19,9 @@ class MyMaintVC: UIViewController {
 //        title = "我的维保"
         view.backgroundColor = .white
         navigationController?.navigationBar.barTintColor = UIColor(red:0,green:0.58,blue:0.475,alpha:1.0)
-        
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)//titile为空，只显示向左箭头
+        item.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem = item
         // 设置标题
         let titleL = UILabel()
         titleL.text = "南京电梯"
