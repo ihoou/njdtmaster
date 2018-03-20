@@ -39,14 +39,15 @@ class WelcomeViewController: UIViewController{
         //调用登陆接口
 //        let md = NSMutableDictionary()
         uuid = uuid.replacingOccurrences(of: "-", with: "")
-        Alamofire.request(CommonData.CONSTANT_PATH_POST, method: .post, parameters: ["data":"{\"txcode\":\"login\",\"imei\":\"\(uuid as String)\"}"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        CommonData.TERMINAL_IDENTIFICATION = uuid
+        Alamofire.request(CommonData.CONSTANT_PATH_POST_MAINT, method: .post, parameters: ["data":"{\"txcode\":\"login\",\"imei\":\"\(uuid as String)\"}"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             
             switch response.result.isSuccess {
             case true:
                 if let value = response.result.value {
-                    //print(登陆验证反馈信息：\(value))
+//                    print("登陆验证反馈信息：\(value)")
                      let json = JSON(value)
-                    //print(value)
+//                    print(value)
                     self.loginFlag = json["rescode"].string!
                     self.loginMsg = json["msg"].string!
                     let time: TimeInterval = 2.3
@@ -65,15 +66,17 @@ class WelcomeViewController: UIViewController{
                         }else if self.loginFlag == "0"{
                             print("登陆成功，原因是：\(self.loginMsg)")
                             //登陆成功，跳转至主页面
-                            //                self.performSegue(withIdentifier: "validatesuccess", sender: nil)
-                            //                 self.present(MainTabViewController(), animated:true, completion:nil)
-                            
                             CommonData.COMPANY_NAME = json["data"]["maintName"].string!
                             CommonData.USER_NAME = json["data"]["staffName"].string!
-                            CommonData.TERMINAL_IDENTIFICATION = json["data"]["staffImei"].string!
+                            CommonData.USER_ROLE = json["data"]["staffRole"].string!//终端用户角色
                             CommonData.LAST_LOGIN_TIME = json["data"]["lastTime"].string!
                             CommonData.CLIENT_ID = json["data"]["clientId"].string!
                             CommonData.MAINT_ID = json["data"]["maintId"].string!
+                            
+                            if CommonData.USER_ROLE == "1" {
+                                CommonData.SIDE_TITILE_ARRAY = ["人员认领","人员管理","实时位置","救援统计","公告信息", "我的排名", "我的信息", "维保统计"]
+                                CommonData.SIDE_IMAGE_ARRAY = ["icon_side_ryrl","icon_side_rygl","icon_side_sswz","icon_side_jytj","icon_side_ggxx", "icon_side_wdpm", "icon_side_wdxx", "icon_side_wbtj"]
+                            }
                             //加载主页面
                             (UIApplication.shared.delegate as! AppDelegate).loadMainView()
                         }else if self.loginFlag == "2"{

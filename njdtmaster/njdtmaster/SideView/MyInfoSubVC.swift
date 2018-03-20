@@ -30,7 +30,6 @@ class MyInfoSubVC: UIViewController {
         companyNameL.text = CommonData.COMPANY_NAME_L
         companyName.text = CommonData.COMPANY_NAME
         companyNameL.font = UIFont.systemFont(ofSize: 12)
-        print(UIDevice.current.modelName)
         if CommonData.COMPANY_NAME.count > 18 {
             companyName.font = UIFont.systemFont(ofSize: 11)
         }else{

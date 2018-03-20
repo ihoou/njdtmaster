@@ -14,8 +14,6 @@ import SwiftyJSON
 class SideViewController: UIViewController {
     
     static let TABLEVIEWCELLIDENTIFIER = "TABLEVIEWCELLIDENTIFIER"
-    let titleArray = ["人员认领","人员管理","实时位置","救援统计","公告信息", "我的排名", "我的信息", "维保统计"]
-    let imageArray = ["icon_drawer_ryrl","icon_drawer_rygl","icon_drawer_sswz","jytj","icon_side_sound", "icon_side_trophy", "icon_side_info", "icon_side_chart"]
     
     var weatherDic:NSMutableDictionary = ["weatherDate":"","weatherInfo":"","weatherTemperature":"","weatherImgURL":"http://api.map.baidu.com/images/weather/day/duoyun.png"]
     var weatherDATE:String = ""
@@ -53,7 +51,7 @@ class SideViewController: UIViewController {
 extension SideViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
+        return CommonData.SIDE_TITILE_ARRAY.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,10 +63,10 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .white
         cell.selectionStyle = UITableViewCellSelectionStyle.none
-        cell.imageView?.image = UIImage(named: imageArray[indexPath.row])
+        cell.imageView?.image = UIImage(named: CommonData.SIDE_IMAGE_ARRAY[indexPath.row])
         
         
-        cell.textLabel?.text = titleArray[indexPath.row]
+        cell.textLabel?.text = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
         return cell
     }
     
@@ -189,35 +187,78 @@ extension SideViewController : UITableViewDelegate, UITableViewDataSource
         let delegate  = UIApplication.shared.delegate! as! AppDelegate
         let rootVC = delegate.window?.rootViewController as! XYSideViewControllerSwift
         rootVC.closeSideVC()
-//        let otherVC = OtherViewController()
-//        otherVC.title = titleArray[indexPath.row]
-//        rootVC.currentNavController?.pushViewController(otherVC, animated: true)
-//        print("\(String(describing: otherVC.title))：页面")
-        switch indexPath.row {
-        case 0:
-            let noticsInfoVC = NoticeInfoSubVC()
-            noticsInfoVC.title = titleArray[indexPath.row]
-            rootVC.currentNavController?.pushViewController(noticsInfoVC, animated: true)
-            print("\(String(describing: noticsInfoVC.title!))子页面")
-        case 1:
-            let myRanksVC = MyRanksSubVC()
-            myRanksVC.title = titleArray[indexPath.row]
-            rootVC.currentNavController?.pushViewController(myRanksVC, animated: true)
-            print("\(String(describing: myRanksVC.title!))子页面")
-        case 2:
-            let myInfoVC = MyInfoSubVC()
-            myInfoVC.title = titleArray[indexPath.row]
-            rootVC.currentNavController?.pushViewController(myInfoVC, animated: true)
-            print("\(String(describing: myInfoVC.title!))子页面")
-        case 3:
-            let maintenanceStatisticsVC = MaintenanceStatisticsSubVC()
-            maintenanceStatisticsVC.title = titleArray[indexPath.row]
-            rootVC.currentNavController?.pushViewController(maintenanceStatisticsVC, animated: true)
-            print("\(String(describing: maintenanceStatisticsVC.title!))子页面")
-        default:
-            print("错误菜单选项")
-        }
         
+        if CommonData.USER_ROLE == "1" {//“1”表示管理员
+            switch indexPath.row {
+            case 0:
+                let personnelClaimVC = PersonnelClaimVC()
+                personnelClaimVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(personnelClaimVC, animated: true)
+                print("\(String(describing: personnelClaimVC.title!))子页面")
+            case 1:
+                let personnelManagementVC = PersonnelManagementVC()
+                personnelManagementVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(personnelManagementVC, animated: true)
+                print("\(String(describing: personnelManagementVC.title!))子页面")
+            case 2:
+                let realtimePositionVC = RealtimePositionVC()
+                realtimePositionVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(realtimePositionVC, animated: true)
+                print("\(String(describing: realtimePositionVC.title!))子页面")
+            case 3:
+                let resuceStatisticsVC = ResuceStatisticsVC()
+                resuceStatisticsVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(resuceStatisticsVC, animated: true)
+                print("\(String(describing: resuceStatisticsVC.title!))子页面")
+            case 4:
+                let noticsInfoVC = NoticeInfoSubVC()
+                noticsInfoVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(noticsInfoVC, animated: true)
+                print("\(String(describing: noticsInfoVC.title!))子页面")
+            case 5:
+                let myRanksVC = MyRanksSubVC()
+                myRanksVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(myRanksVC, animated: true)
+                print("\(String(describing: myRanksVC.title!))子页面")
+            case 6:
+                let myInfoVC = MyInfoSubVC()
+                myInfoVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(myInfoVC, animated: true)
+                print("\(String(describing: myInfoVC.title!))子页面")
+            case 7:
+                let maintenanceStatisticsVC = MaintenanceStatisticsSubVC()
+                maintenanceStatisticsVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(maintenanceStatisticsVC, animated: true)
+                print("\(String(describing: maintenanceStatisticsVC.title!))子页面")
+            default:
+                print("错误菜单选项")
+            }
+        }else{
+            switch indexPath.row {
+            case 0:
+                let noticsInfoVC = NoticeInfoSubVC()
+                noticsInfoVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(noticsInfoVC, animated: true)
+                print("\(String(describing: noticsInfoVC.title!))子页面")
+            case 1:
+                let myRanksVC = MyRanksSubVC()
+                myRanksVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(myRanksVC, animated: true)
+                print("\(String(describing: myRanksVC.title!))子页面")
+            case 2:
+                let myInfoVC = MyInfoSubVC()
+                myInfoVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(myInfoVC, animated: true)
+                print("\(String(describing: myInfoVC.title!))子页面")
+            case 3:
+                let maintenanceStatisticsVC = MaintenanceStatisticsSubVC()
+                maintenanceStatisticsVC.title = CommonData.SIDE_TITILE_ARRAY[indexPath.row]
+                rootVC.currentNavController?.pushViewController(maintenanceStatisticsVC, animated: true)
+                print("\(String(describing: maintenanceStatisticsVC.title!))子页面")
+            default:
+                print("错误菜单选项")
+            }
+        }
     }
 }
 

@@ -40,6 +40,10 @@
 		B2D54883205F9600002B76A5 /* FaultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54882205F9600002B76A5 /* FaultType.swift */; };
 		B2D54885205F962C002B76A5 /* FaultTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54884205F962C002B76A5 /* FaultTypePickerView.swift */; };
 		B2D54887205F96FF002B76A5 /* FaultTypeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D54886205F96FF002B76A5 /* FaultTypeToolbar.swift */; };
+		B2D5488B2060AA7F002B76A5 /* PersonnelClaimVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5488A2060AA7F002B76A5 /* PersonnelClaimVC.swift */; };
+		B2D5489B2060AADE002B76A5 /* PersonnelManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5489A2060AADE002B76A5 /* PersonnelManagementVC.swift */; };
+		B2D5489D2060AB34002B76A5 /* RealtimePositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5489C2060AB34002B76A5 /* RealtimePositionVC.swift */; };
+		B2D5489F2060AB77002B76A5 /* ResuceStatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5489E2060AB77002B76A5 /* ResuceStatisticsVC.swift */; };
 		B2EEEAD4204406AF00CBE7DD /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */; };
 		B2EEEAD6204406CD00CBE7DD /* MyResuceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD5204406CD00CBE7DD /* MyResuceViewController.swift */; };
 		B2EEEAD8204406E400CBE7DD /* ResuceTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEEAD7204406E400CBE7DD /* ResuceTaskViewController.swift */; };
@@ -219,6 +223,10 @@
 		B2D54882205F9600002B76A5 /* FaultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultType.swift; sourceTree = "<group>"; };
 		B2D54884205F962C002B76A5 /* FaultTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultTypePickerView.swift; sourceTree = "<group>"; };
 		B2D54886205F96FF002B76A5 /* FaultTypeToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaultTypeToolbar.swift; sourceTree = "<group>"; };
+		B2D5488A2060AA7F002B76A5 /* PersonnelClaimVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelClaimVC.swift; sourceTree = "<group>"; };
+		B2D5489A2060AADE002B76A5 /* PersonnelManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelManagementVC.swift; sourceTree = "<group>"; };
+		B2D5489C2060AB34002B76A5 /* RealtimePositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimePositionVC.swift; sourceTree = "<group>"; };
+		B2D5489E2060AB77002B76A5 /* ResuceStatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuceStatisticsVC.swift; sourceTree = "<group>"; };
 		B2EEEAD3204406AF00CBE7DD /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		B2EEEAD5204406CD00CBE7DD /* MyResuceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResuceViewController.swift; sourceTree = "<group>"; };
 		B2EEEAD7204406E400CBE7DD /* ResuceTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuceTaskViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +296,10 @@
 				B2417ACC205907A500770E23 /* NoticeInfoSubVC.swift */,
 				B2417ACE205907E300770E23 /* MyRanksSubVC.swift */,
 				B2417AD02059084000770E23 /* MaintenanceStatisticsSubVC.swift */,
+				B2D5488A2060AA7F002B76A5 /* PersonnelClaimVC.swift */,
+				B2D5489A2060AADE002B76A5 /* PersonnelManagementVC.swift */,
+				B2D5489C2060AB34002B76A5 /* RealtimePositionVC.swift */,
+				B2D5489E2060AB77002B76A5 /* ResuceStatisticsVC.swift */,
 			);
 			path = SideView;
 			sourceTree = "<group>";
@@ -580,6 +592,7 @@
 			files = (
 				B2EFC60620084C8D005D8338 /* RegisterViewController.swift in Sources */,
 				B2417ACB2059057300770E23 /* MyInfoSubVC.swift in Sources */,
+				B2D5489B2060AADE002B76A5 /* PersonnelManagementVC.swift in Sources */,
 				B2417ACF205907E300770E23 /* MyRanksSubVC.swift in Sources */,
 				B2013079201F0B6800766573 /* Inspection.swift in Sources */,
 				B2EEEAD8204406E400CBE7DD /* ResuceTaskViewController.swift in Sources */,
@@ -600,14 +613,17 @@
 				B2EEEAD4204406AF00CBE7DD /* MainTabViewController.swift in Sources */,
 				B2EFC60420084C8D005D8338 /* AppDelegate.swift in Sources */,
 				B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */,
+				B2D5489D2060AB34002B76A5 /* RealtimePositionVC.swift in Sources */,
 				B25AEE7C2057665000284433 /* OtherViewController.swift in Sources */,
 				B2F3F313200EE02D006CB78E /* Role.swift in Sources */,
 				B2D54887205F96FF002B76A5 /* FaultTypeToolbar.swift in Sources */,
 				B2683E7B2046840000E60F3C /* Common.swift in Sources */,
 				B2D54885205F962C002B76A5 /* FaultTypePickerView.swift in Sources */,
 				B2417ABB2058C67E00770E23 /* CommonData.swift in Sources */,
+				B2D5489F2060AB77002B76A5 /* ResuceStatisticsVC.swift in Sources */,
 				B201307B201F0BAE00766573 /* InspectionToolbar.swift in Sources */,
 				B25AEE822057693300284433 /* MyResuceVC.swift in Sources */,
+				B2D5488B2060AA7F002B76A5 /* PersonnelClaimVC.swift in Sources */,
 				B2F3F311200EE006006CB78E /* RoleToolbar.swift in Sources */,
 				B2417ACD205907A500770E23 /* NoticeInfoSubVC.swift in Sources */,
 				B2FDD6F620215E97006EC48C /* LoginDoneViewController.swift in Sources */,

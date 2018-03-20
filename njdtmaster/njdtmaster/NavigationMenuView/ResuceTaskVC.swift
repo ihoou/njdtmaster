@@ -13,11 +13,33 @@ class ResuceTaskVC: UIViewController {
     static let ROOTTABLEVIEWCELLIDENTIFIER = "ROOTTABLEVIEWCELLIDENTIFIER"
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "救援任务"
+//        title = "救援任务"
         view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = UIColor(red:0,green:0.58,blue:0.475,alpha:1.0)
+        
+        // 设置标题
+        let titleL = UILabel()
+        titleL.text = "南京电梯"
+        titleL.textColor = UIColor.white
+        titleL.textAlignment = NSTextAlignment.left
+        titleL.font=UIFont.boldSystemFont(ofSize: 17)
+        titleL.sizeToFit()
+        self.navigationItem.titleView = titleL
+        
+//        let menuBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        menuBtn.setImage(#imageLiteral(resourceName: "side_menu"), for: .normal)
+//        menuBtn.addTarget(self, action:#selector(openSideMenu), for:.touchUpInside)
+//        let leftBtn = UIBarButtonItem(customView: menuBtn)
+//        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        negativeSpacer.width = -15
+//        navigationItem.leftBarButtonItems = [negativeSpacer, leftBtn]
+        
         view.addSubview(rootTableView)
     }
-    
+    @objc func openSideMenu(){
+        print("展开侧边菜单")
+        //TODO
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false

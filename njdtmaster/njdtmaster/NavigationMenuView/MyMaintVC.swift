@@ -16,8 +16,19 @@ class MyMaintVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "我的维保"
+//        title = "我的维保"
         view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = UIColor(red:0,green:0.58,blue:0.475,alpha:1.0)
+        
+        // 设置标题
+        let titleL = UILabel()
+        titleL.text = "南京电梯"
+        titleL.textColor = UIColor.white
+        titleL.textAlignment = NSTextAlignment.natural
+        titleL.font=UIFont.boldSystemFont(ofSize: 17)
+        titleL.sizeToFit()
+        self.navigationItem.titleView = titleL
+        
         setUpCustomView()
     }
     

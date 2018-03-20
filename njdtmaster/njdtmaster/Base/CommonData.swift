@@ -30,6 +30,7 @@ class CommonData {
     
     static var COMPANY_NAME:String = "测试单位"
     static var USER_NAME:String = "测试姓名"
+    static var USER_ROLE:String = "0"
     static var TERMINAL_IDENTIFICATION:String = "null"
     static let APPLICATION_VERSION:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
     static var LAST_LOGIN_TIME:String = "1970-01-01 00:00:00"
@@ -40,8 +41,9 @@ class CommonData {
     static var MAINT_ID:String = ""
     static var IMEI:String = ""
     
-    //APP人员角色
-    static var APP_Role:String = ""
+    //侧边菜单信息
+    static var SIDE_TITILE_ARRAY = ["公告信息", "我的排名", "我的信息", "维保统计"]
+    static var SIDE_IMAGE_ARRAY = ["icon_side_ggxx", "icon_side_wdpm", "icon_side_wdxx", "icon_side_wbtj"]
     
     /** Picker Base Infomation */
     static let stateKey:String = "state"
