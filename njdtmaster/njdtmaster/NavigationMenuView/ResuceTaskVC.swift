@@ -36,7 +36,7 @@ class ResuceTaskVC: UIViewController {
 //        negativeSpacer.width = -15
 //        navigationItem.leftBarButtonItems = [negativeSpacer, leftBtn]
         
-        view.addSubview(rootTableView)
+//        view.addSubview(rootTableView)
     }
     @objc func openSideMenu(){
         print("展开侧边菜单")
@@ -74,7 +74,11 @@ extension ResuceTaskVC : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResuceTaskVC.ROOTTABLEVIEWCELLIDENTIFIER, for: indexPath)
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.detailTextLabel?.text = "2018-03-22 09:15:20"
-        print("IFT_CELLULAR=\(IFT_CELLULAR)")
+        let idCode:UILabel = cell.viewWithTag(1101) as! UILabel!
+        let date:UILabel = cell.viewWithTag(1102) as! UILabel!
+        let company:UILabel = cell.viewWithTag(1103) as! UILabel!
+        let address:UILabel = cell.viewWithTag(1104) as! UILabel!
+        
         cell.imageView?.image = UIImage(named: self.imageArray[indexPath.row])
         return cell
     }
