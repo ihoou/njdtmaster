@@ -73,6 +73,8 @@ extension ResuceTaskVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResuceTaskVC.ROOTTABLEVIEWCELLIDENTIFIER, for: indexPath)
         cell.textLabel?.text = self.titleArray[indexPath.row]
+        cell.detailTextLabel?.text = "2018-03-22 09:15:20"
+        print("IFT_CELLULAR=\(IFT_CELLULAR)")
         cell.imageView?.image = UIImage(named: self.imageArray[indexPath.row])
         return cell
     }
