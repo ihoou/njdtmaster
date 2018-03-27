@@ -11,6 +11,8 @@
 		B2013079201F0B6800766573 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2013078201F0B6800766573 /* Inspection.swift */; };
 		B201307B201F0BAE00766573 /* InspectionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201307A201F0BAE00766573 /* InspectionToolbar.swift */; };
 		B201307D201F10D500766573 /* InspectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201307C201F10D500766573 /* InspectionPickerView.swift */; };
+		B22834532068E99A0077C800 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22834512068E9990077C800 /* MyTableViewCell.xib */; };
+		B22834552068EB180077C800 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22834542068EB180077C800 /* MyTableViewCell.swift */; };
 		B234B01E203FA203000008F7 /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234B01D203FA203000008F7 /* BaseNetwork.swift */; };
 		B2417ABB2058C67E00770E23 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ABA2058C67E00770E23 /* CommonData.swift */; };
 		B2417ACB2059057300770E23 /* MyInfoSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2417ACA2059057300770E23 /* MyInfoSubVC.swift */; };
@@ -35,6 +37,7 @@
 		B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EA612205B5AC6001D9866 /* UIDevice.swift */; };
 		B2683E7B2046840000E60F3C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2683E7A2046840000E60F3C /* Common.swift */; };
 		B2712C69205223220020D9F0 /* XYSideViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */; };
+		B278CC78206A1D81005521EB /* ResuceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278CC77206A1D81005521EB /* ResuceMapViewController.swift */; };
 		B27AD555205A480F004D3629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27AD554205A480F004D3629 /* Assets.xcassets */; };
 		B2805CEB202AE0BB005BBD38 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */; };
 		B2B2CEA6204D2F7C00511479 /* OtherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */; };
@@ -220,6 +223,8 @@
 		B2013078201F0B6800766573 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
 		B201307A201F0BAE00766573 /* InspectionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionToolbar.swift; sourceTree = "<group>"; };
 		B201307C201F10D500766573 /* InspectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionPickerView.swift; sourceTree = "<group>"; };
+		B22834522068E9990077C800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyTableViewCell.xib; sourceTree = "<group>"; };
+		B22834542068EB180077C800 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		B234B01D203FA203000008F7 /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		B2417ABA2058C67E00770E23 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		B2417ACA2059057300770E23 /* MyInfoSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoSubVC.swift; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 		B25EA612205B5AC6001D9866 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		B2683E7A2046840000E60F3C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B2712C68205223220020D9F0 /* XYSideViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYSideViewControllerSwift.swift; sourceTree = "<group>"; };
+		B278CC77206A1D81005521EB /* ResuceMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuceMapViewController.swift; sourceTree = "<group>"; };
 		B27AD554205A480F004D3629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPageViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +310,7 @@
 		B234B01A203FA15C000008F7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				B22834542068EB180077C800 /* MyTableViewCell.swift */,
 				B251F366204391800032722A /* ExtensionToast.swift */,
 				B234B01D203FA203000008F7 /* BaseNetwork.swift */,
 				B2683E7A2046840000E60F3C /* Common.swift */,
@@ -408,11 +415,13 @@
 				B2EFC60520084C8D005D8338 /* RegisterViewController.swift */,
 				B2805CEA202AE0BB005BBD38 /* WelcomeViewController.swift */,
 				B27AD554205A480F004D3629 /* Assets.xcassets */,
+				B22834512068E9990077C800 /* MyTableViewCell.xib */,
 				B2EFC60720084C8D005D8338 /* Main.storyboard */,
 				B2EFC60C20084C8D005D8338 /* LaunchScreen.storyboard */,
 				B2EFC60F20084C8D005D8338 /* Info.plist */,
 				B2B2CEA5204D2F7C00511479 /* OtherPageViewController.swift */,
 				B25AEE7B2057665000284433 /* OtherViewController.swift */,
+				B278CC77206A1D81005521EB /* ResuceMapViewController.swift */,
 			);
 			path = njdtmaster;
 			sourceTree = "<group>";
@@ -634,6 +643,7 @@
 				B2EFC60920084C8D005D8338 /* Main.storyboard in Resources */,
 				B2D54873205F8E77002B76A5 /* faultType.plist in Resources */,
 				B2013077201F09D400766573 /* inspection.plist in Resources */,
+				B22834532068E99A0077C800 /* MyTableViewCell.xib in Resources */,
 				B27AD555205A480F004D3629 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +663,7 @@
 				B2EEEAD8204406E400CBE7DD /* ResuceTaskViewController.swift in Sources */,
 				B251F367204391800032722A /* ExtensionToast.swift in Sources */,
 				B201307D201F10D500766573 /* InspectionPickerView.swift in Sources */,
+				B278CC78206A1D81005521EB /* ResuceMapViewController.swift in Sources */,
 				B25AEE842057693300284433 /* MaintPlanVC.swift in Sources */,
 				B2D54883205F9600002B76A5 /* FaultType.swift in Sources */,
 				B2EEEADE2044082400CBE7DD /* MainViewController.swift in Sources */,
@@ -669,6 +680,7 @@
 				B2EFC60420084C8D005D8338 /* AppDelegate.swift in Sources */,
 				B25EA613205B5AC6001D9866 /* UIDevice.swift in Sources */,
 				B2D5489D2060AB34002B76A5 /* RealtimePositionVC.swift in Sources */,
+				B22834552068EB180077C800 /* MyTableViewCell.swift in Sources */,
 				B25AEE7C2057665000284433 /* OtherViewController.swift in Sources */,
 				B2F3F313200EE02D006CB78E /* Role.swift in Sources */,
 				B2D54887205F96FF002B76A5 /* FaultTypeToolbar.swift in Sources */,
@@ -711,6 +723,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B22834512068E9990077C800 /* MyTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22834522068E9990077C800 /* Base */,
+			);
+			name = MyTableViewCell.xib;
+			sourceTree = "<group>";
+		};
 		B2EFC60720084C8D005D8338 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

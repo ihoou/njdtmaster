@@ -48,15 +48,16 @@ class RegisterViewController: UIViewController  {
         var registerURL:String!
         var uuid:String = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         uuid = uuid.replacingOccurrences(of: "-", with: "")
-        print("UUID=\(uuid)")
-        print("Role=\(users.userRole)")
+//        print("UUID=\(uuid)")
+//        print("Role=\(users.userRole)")
         if users.userRole as String == "维保单位" {
-            registerURL = "{\"txcode\":\"login\",\"imei\":\"\(uuid)\","
+            registerURL = "{\"txcode\":\"\(CommonData.TXCODE_LOGIN)\",\"imei\":\"\(uuid)\","
                             + "\"tel\":\"\(users.userPhone as String)\","
                             + "\"name\":\"\(users.userName as String)\","
                             + "\"jobnum\":\"\(users.userJobnum as String)\"}"
             md.setValue(registerURL, forKey: "data")
             network.post(url: "http://202.102.108.167:18082/njlift/android/process.action", params: md)
+//            network.post(url: CommonData.CONSTANT_PATH_POST, params: md)
             
         }else if users.userRole as String == "保险公司" || users.userRole as String == "使用单位" {
             registerURL = "{\"txcode\":\"register\",\"imei\":\"\(uuid)\","
@@ -65,6 +66,7 @@ class RegisterViewController: UIViewController  {
                             + "\"deptType\":\"1\",\"roleType\":\"1\"}"
             md.setValue(registerURL, forKey: "data")
             network.post(url: "http://njdt.njtjy.org.cn:10011/njliftMaint/android/process.action", params: md)
+//            network.post(url: CommonData.CONSTANT_PATH_POST_MAINT, params: md)
         }else{
             print("当前userRole的值是非现有的值，故不执行http请求！")
             print("-----End------")

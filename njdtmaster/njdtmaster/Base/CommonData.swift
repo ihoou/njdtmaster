@@ -12,6 +12,15 @@ import UIKit
 class CommonData {
     
     /*
+        接口参数txcode
+     */
+    static let TXCODE_LOGIN = "login"//登陆验证接口
+    static let TXCODE_REGISTER = "register"//注册接口
+    static let TXCODE_PENDING_FORM = "pendingForm" //获取救援任务（维保单位）
+    static let TXCODE_MY_FORM = "myForm"//获取我的待任务列表
+    
+    
+    /*
         屏幕尺寸
      */
     static let ADMIN_SRCEEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
@@ -39,7 +48,6 @@ class CommonData {
     //其他注册信息
     static var CLIENT_ID:String = ""
     static var MAINT_ID:String = ""
-    static var IMEI:String = ""
     
     //侧边菜单信息
     static var SIDE_TITILE_ARRAY = ["公告信息", "我的排名", "我的信息", "维保统计"]

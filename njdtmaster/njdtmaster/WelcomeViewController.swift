@@ -40,7 +40,8 @@ class WelcomeViewController: UIViewController{
 //        let md = NSMutableDictionary()
         uuid = uuid.replacingOccurrences(of: "-", with: "")
         CommonData.TERMINAL_IDENTIFICATION = uuid
-        Alamofire.request(CommonData.CONSTANT_PATH_POST_MAINT, method: .post, parameters: ["data":"{\"txcode\":\"login\",\"imei\":\"\(uuid as String)\"}"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        print("IMEI=\(uuid!)")
+        Alamofire.request(CommonData.CONSTANT_PATH_POST_MAINT, method: .post, parameters: ["data":"{\"txcode\":\"\(CommonData.TXCODE_LOGIN)\",\"imei\":\"\(uuid as String)\"}"], encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             
             switch response.result.isSuccess {
             case true:
@@ -70,8 +71,10 @@ class WelcomeViewController: UIViewController{
                             CommonData.USER_NAME = json["data"]["staffName"].string!
                             CommonData.USER_ROLE = json["data"]["staffRole"].string!//终端用户角色
                             CommonData.LAST_LOGIN_TIME = json["data"]["lastTime"].string!
-                            CommonData.CLIENT_ID = json["data"]["clientId"].string!
-                            CommonData.MAINT_ID = json["data"]["maintId"].string!
+                            CommonData.CLIENT_ID = json["data"]["9clientId"].string!
+                            CommonData.MAINT_ID = json["data"]["9maintId"].string!
+//                            print("CLIENT_ID=\(CommonData.CLIENT_ID)")
+//                            print("MAINT_ID=\(CommonData.MAINT_ID)")
                             
                             if CommonData.USER_ROLE == "1" {
                                 CommonData.SIDE_TITILE_ARRAY = ["人员认领","人员管理","实时位置","救援统计","公告信息", "我的排名", "我的信息", "维保统计"]
